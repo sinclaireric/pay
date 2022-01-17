@@ -8,11 +8,11 @@
 
  import React from 'react';
  
- import type {Node} from 'react';
  import {
    SafeAreaView,
    StyleSheet,
    Text,
+   Image,
    ImageBackground,
    View,
  } from 'react-native';
@@ -33,11 +33,17 @@
  
    return (
 <View style={styles.card}>
-<ImageBackground source={require('../../images/world-map.png')} resizeMode="cover" style={styles.image}>
+<ImageBackground source={require('./images/world-map.png')} resizeMode="cover" style={styles.image}>
   <Text style={[styles.textcard,{marginTop:20}]} >{name}</Text>
+
+  <View style={styles.rowBtw}>
   <View>
   <Text style={styles.solde}>Solde</Text>
   <Text style={styles.textcard} >{solde} Fcfa</Text>
+  </View>
+
+
+<Image source={require('./images/visa.png')} style={{height:30,width:50}} resizeMode='contain' />
   </View>
   </ImageBackground>
      </View>
@@ -53,6 +59,10 @@
      width:'100%',
      padding:15,
      justifyContent:'space-between'
+   },
+   rowBtw: {
+flexDirection:'row',
+justifyContent:'space-between'
    },
    textcard: {
      fontSize: 16,
